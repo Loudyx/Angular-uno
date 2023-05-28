@@ -1,0 +1,29 @@
+<!-- *ngIf="project" para comprobar si Project existe -->
+<div class="container" *ngIf="project">
+
+	<div class="image" *ngIf="project.image">
+		<img src="{{url+'get-image/'+project.image}}" height="300px"/>
+	</div>
+
+	<div class="data">
+		<h1>{{project.name}}</h1>
+		<h3>{{project.description}}</h3>
+		<p>{{project.category}}</p>
+		<p>{{project.langs}}</p>
+        
+		<!-- Este pone los botones Editar y Borrar -->
+		<!-- Luego de precionar Borrar, pone confirm en True -->
+		<p *ngIf="confirm == false">
+            <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
+			<a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+		</p>
+
+        <!-- Muestra los botones Cancelar y Eliminar -->
+		<p *ngIf="confirm == true">
+			<span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
+			<a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+			<a (click)="deleteProject(project._id)" class="button-delete">ELIMINAR ALV</a>
+		</p>
+        
+	</div>
+</div>

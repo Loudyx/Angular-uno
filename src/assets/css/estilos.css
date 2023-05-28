@@ -1,0 +1,342 @@
+/*Esta es una regla para cargar fuentes externas*/
+@font-face{
+    font-family: "yanone";
+    src: url("../fonts/yanone.ttf");
+}
+@font-face{
+    font-family: "finger";
+    src: url("../fonts/finger.ttf");
+}
+
+/*Aqui indicamos que la fuente sea Yanone, si no que sea Arial, si no que sea Helvetica y asi...*/
+/*Estilos Generales*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: "yanone", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background: url(../img/pattern.png);
+    background-attachment: fixed;
+} 
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+
+/*Barra de navecion o header*/
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.8);
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul{
+    display: block;
+    width: 550px;
+    height: inherit;
+    margin: 0px auto;
+    margin-top: -7px;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+}
+
+
+header a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+/*Esto pone negro el fondo del link cuando se pasa el puntero en la barra*/
+header a:hover, .activado{
+    background: rgba(0,0,0,0.6);
+}
+
+/*Esto hace que en el logo no se vea el hover*/
+header #logo a:hover{
+    background: rgba(0,0,0,0);
+}
+
+/*LOGO*/
+#logo{
+    font-family: "finger", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+/*Esto sirve para que al pasar el cursor el tamaño cambie y se haga negro*/
+#logo a{
+    transition: color 500ms, transform 500ms;
+}
+#logo a:hover{
+    background: transparent;
+    color: black;
+    transform: scale(1.5, 1.5);
+}
+
+
+/*Contenedor principal*/
+#content{
+	min-height: 600px;
+	height: auto;
+	width: 75%;
+	margin: 0px auto;
+	box-shadow: 0px 0px 40px black;
+	border-left:1px solid #b7b7b7;
+	border-right:1px solid #b7b7b7;
+	background: rgba(255, 255, 255, 0.7);
+	padding-top: 120px;
+}
+
+/*Pie de pagina*/
+/*El margin 0px auto hace que se centre en automatico*/
+footer{
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 15px;
+    color: rgba(0,0,0,0.5)
+}
+
+
+/** SECCION SOBRE MI**/
+#titulo{
+	width: 70%;
+	margin: 0px auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+
+#titulo h1{
+	font-family: "finger";
+	font-size: 60px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
+
+
+#titulo h2{
+	font-size: 35px;
+	color: gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/* SECCION DEL CUERPO DEL ARTICULO SOBRE MI*/
+
+article.sobremi{
+	width: 70%;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	font-size: 23px;
+}
+
+.sobremi h2{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.sobremi p{
+	padding-top: 20px;
+	padding-bottom: 30px;
+	text-align: justify;
+}
+
+
+
+/* Seccion de formulario*/
+/* CREAR-------------*/
+.container{
+	padding: 50px;
+	padding-top: 10px;
+}
+
+
+/*Para el detalle*/
+/*Esto para la seccion del detalle*/
+
+.container .image{
+	float: left;
+	width: 47%;
+	height: auto;
+}
+
+.container .image img{
+	width: 100%;
+	height: auto;
+}
+
+.container .data{
+	float: left;
+	width: 48%;
+	margin-left:30px;
+}
+
+.container h2{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+/*FIN DE LA PARTE DEL DETALLE*/
+
+
+
+form{
+	width: 80%;
+}
+
+form label{
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+	width: 40%;
+	padding: 5px;
+}
+
+
+form button,
+form input[type="submit"],
+.button-edit,
+.button-delete{
+	display: block;
+	font-size: 17px;
+	padding: 10px;
+	margin-top: 15px; 
+	color:white;
+	background: rgba(53, 103, 164, 1);
+	border: 1px solid rgba(13, 67, 133, 1);
+	cursor: pointer;
+}
+
+/*Para botones de borrar y editar*/
+.button-edit,
+.button-delete{
+	width: 30%;
+	text-align: center;
+	float: left;
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+.button-edit{
+	background: orange;
+	border: none;
+}
+
+.button-delete{
+	background: red;
+	border: none;
+}
+/*Fin de botones de editar y borrar*/
+
+
+form button:hover,
+form input[type="submit"]:hover{
+	background: rgba(53, 103, 164, 0.8);
+	border: 1px solid rgba(13, 67, 133, 1);
+}
+form input[disabled]{
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+
+/* Reslatar mensaje de error en formulario de crear*/
+.form_error{
+	font-size: 20px;
+	padding: 3px;
+	background: red;
+	color:white;
+	margin-left: 5px;
+}
+
+/*Esto es del mensaje de regitro exitosos o si fallo*/
+.message{
+	width: 50%;
+	padding: 5px;
+	border: 1px solid #eee;
+}
+
+.success{
+	background: green;
+	color: white;
+}
+
+.message a{
+	color: white;
+}
+
+.failed{
+	background: red;
+	color: white;
+}
+
+/*El listado de proyectoos*/
+/*Pagina de proyectos*/
+
+.project{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 28%;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	border: 1px solid #000000 ;
+}
+
+.project .image{
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+}
+
+.project img{
+	width: 100%;
+}
+
+.project a{
+	text-decoration: none;
+	color: black;
+}
+
+/*Este se le asigno al "content" para que no omita el espacio del ul y lista*/
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/*Este es para el coonfirm de borrar*/
+.confirm{
+	display: block;
+	font-weight: bold;
+	margin-top: 20px;
+}

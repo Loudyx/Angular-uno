@@ -1,0 +1,26 @@
+<!--
+<h1>Proyecto de Angular</h1>
+-->
+<!-- routerLinkActive sirve para ponerle una clase a un Link si le hace click-->
+<!-- eso es util para darle estilo a esa clase activada-->
+
+<header>
+  <ul>
+    <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['activado']">Sobre mi</a></li>
+    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['activado']">Proyectos</a></li>
+    <li id="logo"><a href="#">DRC</a></li>
+    <li><a [routerLink]="['/crear']" [routerLinkActive]="['activado']">Crear post</a></li>
+    <li><a [routerLink]="['/galeria']" [routerLinkActive]="['activado']">Galeria</a></li>
+  </ul>
+</header>
+
+  
+<section id="content"> 
+  <!-- El router oulet es el nombre del componente que se llama -->
+  <!-- Es lo que hace que diga X cosa-Works -->
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Master de udemy web xd
+</footer>

@@ -1,0 +1,67 @@
+<div class="container" >
+    <h2>{{title}}</h2>
+
+    <div class="message success" *ngIf="status == 'success'">
+		El proyecto se ha creado correctamente, puedes <a [routerLink]="['/detalle',ultimoProyectoCreado._id]">verlo aquí</a> 
+	</div>
+
+    <div class="message failed" *ngIf="status == 'failed'">
+		El proyecto NO SE HA PODIDO CREAR
+	</div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
+            <span class="form_error" *ngIf="name.touched && !name.valid"> 
+                El nombre es obligatorio
+            </span>
+
+        </p>
+
+        <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span class="form_error" *ngIf="description.touched && !description.valid">
+                La descripción es obligatoria
+            </span>
+        </p>
+
+        <p>
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
+            <span class="form_error" *ngIf="category.touched && !category.valid">
+                La categoría es obligatoria
+            </span>
+        </p>
+
+        <p>
+            <label for="year">Año de lanzamiento</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
+        </p>
+
+        <p>
+            <label for="langs">Lenguajes utilizados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required />
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">
+                Los lenguajes son obligatorios
+            </span>
+        </p>
+
+        
+        <p>
+            <label for="image">Imagen del proyecto</label>
+            <!-- 
+            <span class="image" *ngIf="project.image" style="float:none;">
+                <img src="{{url+'get-image/'+project.image}}" style="width:100px;"/>
+            </span><br/>
+            -->
+            <input type="file" name="image" placeholder="Subir imagen" (change)="eventoCambioArchivo($event)"/>
+            <!-- //El $event captura todos los datos que tenga el Input (en este caso el boton)
+            //Change se activa cuando ocurre un cambio en el input -->
+        </p>
+    
+
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
+    </form>
+</div>
