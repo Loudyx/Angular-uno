@@ -57,7 +57,10 @@
             <!-- Comprueba si existe la propiedad imagen y si si la muestra-->
             <!-- Esta ddentro de un span porque no se pueden meter DIV dentor de parrafo-->
             <span class="image" *ngIf="project.image" style="float:none;">
+                <!--
                 <img src="{{url+'get-image/'+project.image}}" style="width:100px;"/>
+                -->
+                <img src="{{project.image}}" style="width:100px;"/>
             </span><br/>
             
             <input type="file" name="image" placeholder="Subir imagen" (change)="eventoCambioArchivo($event)"/>
